@@ -1,4 +1,11 @@
 <h1>All Blogs</h1>
 
-<p>blogs go here</p>
+{{#each model as |blog|}}
+  <a {{action 'toggleBlogPost' post}}>
+    <h3>{{blog.title}}</h3>
+  </a>
+  {{#if isShowingBlog}}
+    <p>{{blog.body}}</p>
+  {{/if}}
+{{/each}}
 {{outlet}}
